@@ -1,0 +1,202 @@
+/* ========= GLOBAL RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========= BACKGROUND LAYERS ========= */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+}
+
+.bg-1 {
+  background-image: url("../assets/bg1.jpg");
+  opacity: 1;
+}
+
+.bg-2 {
+  background-image: url("../assets/bg2.jpg");
+  opacity: 0;
+}
+
+/* ========= BODY ========= */
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========= OVERLAY ========= */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 105, 135, 0.55),
+    rgba(255, 105, 135, 0.75)
+  );
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* ========= FLOATING HEARTS ========= */
+.hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  color: rgba(255, 255, 255, 0.8);
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* ========= MAIN CARD ========= */
+.container {
+  position: relative;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(18px);
+  padding: 2.6rem 2.2rem;
+  border-radius: 26px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+  animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9) translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ========= BUTTONS ========= */
+.buttons {
+  position: relative;
+  height: 160px;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(255, 77, 109, 0.6);
+}
+
+#yesBtn.glow {
+  box-shadow:
+    0 0 15px rgba(255, 77, 109, 1),
+    0 0 35px rgba(255, 77, 109, 0.9),
+    0 0 60px rgba(255, 77, 109, 0.8);
+}
+
+#noBtn {
+  background: #adb5bd;
+  color: #fff;
+  position: absolute;
+  z-index: 1;
+  transition: left 0.15s ease, top 0.15s ease;
+}
+
+#message {
+  margin-top: 1.8rem;
+  color: #fff;
+  font-weight: 600;
+  min-height: 28px;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+#musicToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+#musicToggle:hover {
+  transform: scale(1.1);
+}
+/* ========= FOOTER ========= */
+.site-footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.site-footer strong {
+  font-weight: 600;
+}
