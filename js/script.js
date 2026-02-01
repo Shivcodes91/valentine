@@ -101,13 +101,18 @@ document.addEventListener("click", startMusicOnce);
    YES BUTTON → WHATSAPP
 ========================= */
 yesBtn.addEventListener("click", () => {
-  const phoneNumber = "91XXXXXXXXXX"; // replace with your number
-  const text = encodeURIComponent(
-    "I tried saying NO… but YES won 💖😌"
-  );
+  const phoneNumber = "91XXXXXXXXXX"; // NO +, NO spaces
+  const messageText = "I tried saying NO… but YES won 💖😌";
 
-  window.location.href = `https://wa.me/${phoneNumber}?text=${text}`;
+  const whatsappURL =
+    "https://api.whatsapp.com/send?phone=" +
+    phoneNumber +
+    "&text=" +
+    encodeURIComponent(messageText);
+
+  window.open(whatsappURL, "_blank");
 });
+
 
 /* =========================
    NO BUTTON ESCAPE LOGIC
