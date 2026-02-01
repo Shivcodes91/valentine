@@ -101,7 +101,7 @@ document.addEventListener("click", startMusicOnce);
    YES BUTTON → WHATSAPP
 ========================= */
 yesBtn.addEventListener("click", () => {
-  const phoneNumber = "91XXXXXXXXXX"; // NO +, NO spaces
+  const phoneNumber = "919140710892"; // NO +, NO spaces
   const messageText = "I tried saying NO… but YES won 💖😌";
 
   const whatsappURL =
